@@ -1,6 +1,6 @@
 from cv2 import cv2
 import numpy as np
-import copy
+import os
 
 def imshow(img):
     cv2.imshow('image', img)
@@ -16,14 +16,20 @@ def sortContours(rect):
                 rect[j] = tmp
     return rect
 
+files = os.listdir()
+if 'template' not in files:
+    path = os.getcwd()
+    path += '\project1'
+    os.chdir(path)
+
 tem_rgb = cv2.imread('template.png')
 img_rgb = cv2.imread('credit_card.png')
 
 tem_gray = cv2.imread('template.png', 0)
 img_gray = cv2.imread('credit_card.png', 0)
 
-tem = tem_gray.copy()
-img = img_gray.copy()
+tem = np.copy(tem_gray)
+img = np.copy(img_gray)
 
 #对模板预处理
 ret, tem = cv2.threshold(tem, 127, 255, cv2.THRESH_BINARY_INV)
@@ -98,7 +104,6 @@ for (i, c) in enumerate(contours):
 
 tmp = img_rgb.copy()
 show = cv2.drawContours(tmp, cnts, -1, (0, 0, 255), 1)
-imshow(show)
 
 #给轮廓排序
 rects = sortContours(rects)
