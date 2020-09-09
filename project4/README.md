@@ -169,7 +169,7 @@ for i in range(len(break_dot) - 1):
 imshow(show)
 ```
 处理的结果如下：
-！[img7](https://github.com/RainFromCN/opencv_projects/blob/master/project4/pic5.png)
+![img7](https://github.com/RainFromCN/opencv_projects/blob/master/project4/pic5.png)
 
 ## **插值和对齐**
 记忆化搜索出来的结果没有重叠的部分，而且都是匹配比较优良的组合，但是其没有左右对齐，比较杂乱，而且中间有空隙，
@@ -225,7 +225,7 @@ for i in range(len(break_dot) - 1):
 imshow(show)
 ```
 处理结果如下：
-！[img8](https://github.com/RainFromCN/opencv_projects/blob/master/project4/pic7.png)
+![img8](https://github.com/RainFromCN/opencv_projects/blob/master/project4/pic7.png)
 
 最后进行图像的切分，切分结果如下：
 ![img9](https://github.com/RainFromCN/opencv_projects/blob/master/project4/pic8.png)
