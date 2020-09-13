@@ -77,20 +77,24 @@ if show_process:
 ```
 
 *运行结果如下：*
+
 ![img3](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/3%E3%80%81%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2.jpg)
 
 ## **预处理**
 得到透视变换的图片之后，也是先要进行预处理操作，首先为了消除不同图片曝光程度不同的影响，需要先对图片进行*自适应直方图均衡化*
 
-处理结果如下：
+*处理结果如下：*
+
 ![img4](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/4%E3%80%81%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96.jpg)
 
 然后对图片进行二值化，以便轮廓检测。但进行完二值化的图片还有一个问题，就是在涂答题卡的时候，如果没有涂的饱满，
 就可能会造成检测结果不准确，所以为了使检测结果更加准确，还需要进行*闭运算*操作，处理后的结果如下：
+
 ![img5](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/5%E3%80%81%E4%BA%8C%E5%80%BC%E5%8C%96%2B%E9%97%AD%E8%BF%90%E7%AE%97.jpg)
 
 ## **轮廓检测 + 轮廓过滤**
 首先提取全部轮廓，结果如下：
+
 ![img6](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/6%E3%80%81%E5%85%A8%E9%83%A8%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B.jpg)
 
 可以看到提取到了很多轮廓，其中很多都是我们不需要的轮廓，于是我们需要使用一些过滤算法，把我们需要的轮廓（25个椭圆）保留下来
@@ -183,7 +187,8 @@ for i in range(1, len(cntsex)):
     cnts.append(cntsex[i])
 ```
 
-最后的处理结果如下：
+*最后的处理结果如下：*
+
 ![img7](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/7%E3%80%81%E5%9F%BA%E4%BA%8E%E7%89%B9%E5%BE%81%E7%9A%84%E8%BD%AE%E5%BB%93%E8%BF%87%E6%BB%A4.jpg)
 
 ## **排序 + 检测**
@@ -217,7 +222,8 @@ for i in range(rows):
 print(ANS)
 ```
 
-处理结果如下：
+*处理结果如下：*
+
 ![img8](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/8%E3%80%81%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.jpg)
 
 
