@@ -7,14 +7,14 @@
 先对图片进行Canny边缘检测，然后进行膨胀操作，膨胀操作的目的在于，如果纸张的外轮廓不是很明显，Canny边缘检测后纸张
 外轮廓不连续有小洞，使用膨胀操作填充小洞
 
-*处理的结果如下：*
+**处理的结果如下：**
 
 ![img1](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/1%E3%80%81Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%2B%E8%86%A8%E8%83%80.jpg)
 
 ## **轮廓检测**
 提取面积最大的轮廓`MaxContour`，并进行自适应轮廓近似，自适应轮廓近似中取`epsilon = 0.0001 * 周长`
 
-*具体代码如下：*
+**具体代码如下：**
 ```python
 #步长设置为周长的0.0001倍，一般来说取epsilon = 0.001倍周长
 step = 0.0001 * cv2.arcLength(cnts[0], True)
@@ -28,7 +28,7 @@ while len(cnt) != 4:
     epsilon += step
 ```
 
-*处理结果如下：*
+**处理结果如下：**
 ![img2](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/2%E3%80%81%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B.jpg)
 
 ## **透视变换**
@@ -76,14 +76,14 @@ if show_process:
     imshow(paper1)
 ```
 
-*运行结果如下：*
+**运行结果如下：**
 
 ![img3](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/3%E3%80%81%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2.jpg)
 
 ## **预处理**
 得到透视变换的图片之后，也是先要进行预处理操作，首先为了消除不同图片曝光程度不同的影响，需要先对图片进行*自适应直方图均衡化*
 
-*处理结果如下：*
+**处理结果如下：**
 
 ![img4](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/4%E3%80%81%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96.jpg)
 
@@ -187,7 +187,7 @@ for i in range(1, len(cntsex)):
     cnts.append(cntsex[i])
 ```
 
-*最后的处理结果如下：*
+**最后的处理结果如下：**
 
 ![img7](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/7%E3%80%81%E5%9F%BA%E4%BA%8E%E7%89%B9%E5%BE%81%E7%9A%84%E8%BD%AE%E5%BB%93%E8%BF%87%E6%BB%A4.jpg)
 
@@ -222,7 +222,7 @@ for i in range(rows):
 print(ANS)
 ```
 
-*处理结果如下：*
+**处理结果如下：**
 
 ![img8](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/8%E3%80%81%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.jpg)
 
