@@ -29,6 +29,7 @@ while len(cnt) != 4:
 ```
 
 **处理结果如下：**
+
 ![img2](https://github.com/RainFromCN/opencv_projects/blob/master/project5/%E6%AD%A5%E9%AA%A4%E5%9B%BE%E8%A7%A3/2%E3%80%81%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B.jpg)
 
 ## **透视变换**
