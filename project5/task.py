@@ -16,7 +16,7 @@ def imshow(img):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-org1 = cv2.imread('paper_1.png')
+org1 = cv2.imread('paper_2.jpg')
 
 paper1 = cv2.cvtColor(org1, cv2.COLOR_BGR2GRAY)
 
